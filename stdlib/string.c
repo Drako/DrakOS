@@ -17,11 +17,27 @@
     along with DrakOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <kernel/multiboot.h>
 #include <string.h>
 
-int main(unsigned int multiboot_magic, multiboot_info * multiboot_info)
+void * memcpy(void * dest, void const * src, size_t cnt)
 {
-    return 0;
+    char * d = dest, * e = d + cnt;
+    char const * s = src;
+    while (d != e)
+        *d++ = *s++;
+    return dest;
 }
 
+char * strcpy(char * dest, char const * src)
+{
+    char * cpy = dest;
+    while ((*cpy++ = *src++));
+    return dest;
+}
+
+char * strncpy(char * dest, char const * src, size_t cnt)
+{
+    char * cpy = dest;
+    while ((*cpy++ = *src++) && (cpy < dest + cnt));
+    return dest;
+}

@@ -17,11 +17,27 @@
     along with DrakOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <kernel/multiboot.h>
-#include <string.h>
+#ifndef DRAKOS_CSTRING
+#define DRAKOS_CSTRING
 
-int main(unsigned int multiboot_magic, multiboot_info * multiboot_info)
+#include "string.h"
+
+namespace std
 {
-    return 0;
+    using ::memcpy;
+    using ::memmove;
+    using ::strcpy;
+    using ::strncpy;
+    
+    using ::strcat;
+    using ::strncat;
+    
+    using ::memcmp;
+    using ::strcmp;
+    using ::strncmp;
+    
+    using ::memset;
+    using ::strlen;
 }
 
+#endif // DRAKOS_CSTRING

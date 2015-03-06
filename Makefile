@@ -8,11 +8,11 @@ CXXFLAGS	= -nostdlib -nostdinc -ffreestanding -fno-builtin -fno-stack-protector 
 LDFLAGS		= -Tlink.ld -melf_i386
 ASFLAGS		= -f elf32
 
-CXXSOURCES	= $(wildcard *.cxx)
-CSOURCES	= $(wildcard *.c)
-ASSOURCES	= $(wildcard *.asm)
-CXXOBJECTS  = $(CXXSOURCES:.cxx=.o)
-COBJECTS    = $(CSOURCES:.c=.o)
+CXXSOURCES	= $(wildcard *.cxx) $(wildcard **/*.cxx)
+CSOURCES	= $(wildcard *.c) $(wildcard **/*.c)
+ASSOURCES	= $(wildcard *.asm) $(wildcard **/*.asm)
+CXXOBJECTS  	= $(CXXSOURCES:.cxx=.o)
+COBJECTS    	= $(CSOURCES:.c=.o)
 ASOBJECTS	= $(ASSOURCES:.asm=.o)
 
 TARGET = DrakOS.krn
