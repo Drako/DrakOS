@@ -1,0 +1,8 @@
+# KDevelop
+*.kdev4
+.kdev4/
+
+# build results
+*.o
+*.krn
+
