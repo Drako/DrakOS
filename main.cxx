@@ -18,7 +18,7 @@
 */
 
 #include <kernel/multiboot.h>
-#include <string.h>
+#include <cstring>
 
 int main(unsigned int multiboot_magic, multiboot_info * multiboot_info)
 {

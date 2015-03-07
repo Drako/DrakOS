@@ -19,25 +19,73 @@
 
 #include <string.h>
 
+/***********
+ * Copying *
+ ***********/
+
 void * memcpy(void * dest, void const * src, size_t cnt)
 {
-    char * d = dest, * e = d + cnt;
-    char const * s = src;
-    while (d != e)
-        *d++ = *s++;
-    return dest;
+    return __builtin_memcpy(dest, src, cnt);
+}
+
+void * memmove(void * dest, void const * src, size_t cnt)
+{
+    return __builtin_memmove(dest, src, cnt);
 }
 
 char * strcpy(char * dest, char const * src)
 {
-    char * cpy = dest;
-    while ((*cpy++ = *src++));
-    return dest;
+    return __builtin_strcpy(dest, src);
 }
 
 char * strncpy(char * dest, char const * src, size_t cnt)
 {
-    char * cpy = dest;
-    while ((*cpy++ = *src++) && (cpy < dest + cnt));
-    return dest;
+    return __builtin_strncpy(dest, src, cnt);
+}
+
+/*****************
+ * Concatenation *
+ *****************/
+
+char * strcat(char * dest, char const * src)
+{
+    return __builtin_strcat(dest, src);
+}
+
+char * strncat(char * dest, const char * src, size_t cnt)
+{
+    return __builtin_strncat(dest, src, cnt);
+}
+
+/**************
+ * Comparison *
+ **************/
+
+int memcmp(void const * lhs, void const * rhs, size_t cnt)
+{
+    return __builtin_memcmp(lhs, rhs, cnt);
+}
+
+int strcmp(char const * lhs, char const * rhs)
+{
+    return __builtin_strcmp(lhs, rhs);
+}
+
+int strncmp(char const * lhs, char const * rhs, size_t cnt)
+{
+    return __builtin_strncmp(lhs, rhs, cnt);
+}
+
+/*********
+ * Other *
+ *********/
+
+void * memset(void * ptr, unsigned char val, size_t cnt)
+{
+    return __builtin_memset(ptr, val, cnt);
+}
+
+size_t strlen(char const * str)
+{
+    return __builtin_strlen(str);
 }

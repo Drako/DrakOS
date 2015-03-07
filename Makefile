@@ -3,8 +3,8 @@ CXX			= g++
 AS			= nasm
 LD			= ld
 
-CFLAGS		= -nostdlib -nostdinc -ffreestanding -fno-builtin -fno-stack-protector -O0 -Wall -m32 -I./include -std=c99
-CXXFLAGS	= -nostdlib -nostdinc -ffreestanding -fno-builtin -fno-stack-protector -O0 -Wall -m32 -I./include -fno-rtti -fno-exceptions -std=c++11
+CFLAGS		= -nostdlib -nostdinc -ffreestanding -fno-builtin -fno-stack-protector -O3 -Wall -m32 -I./include -std=c99
+CXXFLAGS	= -nostdlib -nostdinc -ffreestanding -fno-builtin -fno-stack-protector -O3 -Wall -m32 -I./include -fno-rtti -fno-exceptions -std=c++11
 LDFLAGS		= -Tlink.ld -melf_i386
 ASFLAGS		= -f elf32
 

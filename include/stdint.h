@@ -143,7 +143,7 @@ typedef unsigned long long int uintmax_t;
 
 /***********************
  * Macros for literals *
- ***********************
+ ***********************/
 
 #define INT8_C(c)  c
 #define INT16_C(c) c
