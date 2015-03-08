@@ -18,10 +18,17 @@
 */
 
 #include <kernel/multiboot.h>
-#include <cstring>
+#include <drivers/com.h>
 
 int main(unsigned int multiboot_magic, multiboot_info * multiboot_info)
 {
+    char const msg[] = "Helloworld";
+    char const * p = msg;
+
+    //com_init(COM1, 115200, 1, 8);
+    while (*p)
+        com_write(COM1, *p++);
+
     return 0;
 }
 

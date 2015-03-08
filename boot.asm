@@ -3,7 +3,7 @@
 global start
 extern main
 
-FLAGS       equ 7
+FLAGS       equ 3
 MAGIC       equ 0x1BADB002
 CHECKSUM    equ -(MAGIC + FLAGS)
 
@@ -13,11 +13,6 @@ align 4
     dd MAGIC
     dd FLAGS
     dd CHECKSUM
-
-    dd 0 ; linear graphics mode
-    dd 1366 ; width
-    dd 768 ; height
-    dd 24 ; depth
 
 STACKSIZE equ 0x4000
 

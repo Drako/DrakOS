@@ -80,9 +80,6 @@ typedef unsigned long long int uintmax_t;
  * Constants *
  *************/
 
-#define __INT64_C(c) c##LL
-#define __INT32_C(c) c##ULL
-
 #define INT8_MIN   (-128)
 #define INT16_MIN  (-32767-1)
 #define INT32_MIN  (-2147483647-1)
